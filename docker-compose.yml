@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  php-fpm:
+    build: ./docker/php-fpm
+    volumes:
+      - ./:/var/www:rw
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
